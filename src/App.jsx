@@ -11,7 +11,7 @@ export default function App() {
         <div className="container d-flex align-center justify-center f-column">
           <h1 className="main-1-title">FOR THE WINNERS</h1>
           <section className="buy-now">
-            <p className="main-1-text">Tadej Pogacar won Tour de France 2024 on <i>Colnago “Fleur-de-Lys”</i></p>
+            <p className="main-1-text">Tadej Pogacar, 3-time Tour de France Champion rides <i>Colnago V4Rs</i></p>
             <button className="main-1-button d-flex">Buy now &#8594;</button>
           </section>
         </div>
