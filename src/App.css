@@ -219,131 +219,61 @@ a {
   padding-bottom: 18px;
 }
 
-@media (max-width:1200px){
-  .container{
-     max-width: 970px;
-  }
+/* --------------------------------------------------------------------*/
+.main-header-nav a.active {
+  /* Add your active tab styling here */
+  color: #ff6b00; /* Example: orange highlight for active tab */
+  font-weight: bold;
+  border-bottom: 2px solid #ff6b00;
 }
 
-@media (max-width:992px){
-  .container{
-     max-width: 750px;
-   }
-
-  .header{
-     flex-direction: column;
-     align-items: flex-start;
-   }
+/* Add styling for new tab content sections */
+.main-3, .main-4, .main-gear, .main-support {
+  /* Add your styles similar to main-1 and main-2 */
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-@media (max-width:768px){
-  *:focus {
-     outline: none;
-  }
+/* Add background images for new sections */
+.main-3 {
+  flex-grow: 1;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/jonas_cervelo.webp) no-repeat;
+  background-size: cover;
 }
 
-@media (max-width:767px){
-  .container{
-     max-width: none;
-  }
+.main-4 {
+  flex-grow: 1;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/jonas_cervelo.webp) no-repeat;
+  background-size: cover;
+}
 
-  .description-text{
-     max-width: 80%;
-  }
+.main-gear {
+  flex-grow: 1;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/jonas_cervelo.webp) no-repeat;
+  background-size: cover;
+}
 
-  .body.lock {
-    overflow: hidden;
- }
- 
- .header {
-    z-index: 2;
- }
-
- .header__tdf-logo__mobile {
-    display: block;
-    position: relative;
-    z-index: 3;
- }
-
- .burger {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    position: relative;
-    margin-right: 20px;
-    z-index: 3;
- }
-
- .burger:focus {
-    outline: none;
- }
-
- .burger-line {
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 3px;
-    position: relative;
-    transition: .3s;
- }
-
- .burger-line:first-child {
-    top: 3px;
-    transform: translateY(-10px);
- }
-
- .burger-line:last-child {
-    bottom: 3px;
-    transform: translateY(10px);
- }
-
- .burger.open .burger-line:first-child {
-    transform: rotate(45deg);
- }
-
- .burger.open .burger-line:nth-child(2) {
-    opacity: 0;
- }
-
- .burger.open .burger-line:last-child {
-    transform: rotate(-45deg);
- }
-
- .header-content {
-    z-index: 40;
- }
-
- .main-header-nav {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all .5s ease 0s;
-    overflow: auto;
-    display: block;
-    background-color: rgb(37, 37, 58);
-    padding: 90px 0 0 40px;
-    z-index: 1;
- }
-
- .main-header-nav.open {
-    top: 0;
- }
-
- .main-header-nav a {
-    font-size: 18px;
-    padding: 10px 10px;
-    display: block;
- }
-
- .main-header-nav a + a {
-    margin: 0;
- }
+.main-support {
+  flex-grow: 1;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/jonas_cervelo.webp) no-repeat;
+  background-size: cover;
 }
