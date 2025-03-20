@@ -15,7 +15,7 @@ export default function Header() {
     <div className="header">
       <div className="container d-flex align-center justify-center header-content">
       <a href="#"><img src={TdFlogo} alt="TdF logo" className="header__logo header__tdf-logo__mobile"/></a>
-        <nav className={`main-header-nav ${isOpen ? "open" : ""}`}>
+        <nav className={`main-header-nav uppercase ${isOpen ? "open" : ""}`}>
           <a href="#">Bikes</a>
           <a href="#">Teams</a>
           <a href="#"><img src={TdFlogo} alt="TdF logo" className="header__logo header__logo-tdf"/></a>

@@ -11,11 +11,6 @@ body {
   min-height: 100vh;
   position: relative;
   font-weight: 400;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)
-  ), url(/pogacar_yellow_colnago.webp) no-repeat;
-  background-size: cover;
 }
 
 a {
@@ -56,6 +51,10 @@ a {
   align-items: center;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .header {
   height: 90px;
   position: fixed;
@@ -68,7 +67,6 @@ a {
 .header a {
   font-weight: 700;
   font-size: 20px;
-  text-transform: uppercase;
   transition: .5s;
   -webkit-transition: .5s;
 }
@@ -129,6 +127,11 @@ a {
 .main-1 {
   flex-grow: 1;
   height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/pogacar_yellow_colnago.webp) no-repeat;
+  background-size: cover;
 }
 
 .main-1-title {
@@ -145,26 +148,57 @@ a {
 .main-1-button {
   background-color: rgb(220, 20, 5);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   border: 0;
   border-radius: 14px;
   padding: 15px;
   margin: 20px auto;
   cursor: pointer;
-  transition: .5s;
+  transition: transform 0.5s ease-in-out, opacity 0.5s;
 }
 
 .main-1-button:hover {
-  opacity: .8;
+  transform: scale(1.1);
+}
+
+.main-2 {
+  flex-grow: 1;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/jonas_cervelo.webp) no-repeat;
+  background-size: cover;
+}
+
+.main-2-title {
+  width: 100%;
+  font-size: 50px;
+  font-style: italic;
+}
+
+.main-2-text {
+  padding: 30px 0 15px 0;
+}
+
+.buy-now {
+  text-align: center;
+}
+
+.buy-now q {
+  font-size: 22px;
+  font-style: italic;
 }
 
 .footer {
   width: 100%;
+  background-color: #a1a1a1;
 }
 
 .our-social-networks {
   font-weight: 700;
   text-align: center;
+  font-size: 20px;
   padding: 10px 0px;
 }
 
