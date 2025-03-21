@@ -20,9 +20,6 @@ export default function Header({ activeTab, setActiveTab }) {
   return (
     <div className="header">
       <div className="container d-flex align-center justify-center header-content">
-        <a href="#" onClick={() => handleTabClick("bikes")}>
-          <img src={TdFlogo} alt="TdF logo" className="header__logo header__tdf-logo__mobile"/>
-        </a>
         <nav className={`main-header-nav uppercase ${isOpen ? "open" : ""}`}>
           <a href="#" className={activeTab === "bikes" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleTabClick("bikes"); }}>Bikes</a>
           <a href="#" className={activeTab === "teams" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleTabClick("teams"); }}>Teams</a>

@@ -51,6 +51,10 @@ a {
   align-items: center;
 }
 
+.align-end {
+  align-items: end;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -95,14 +99,6 @@ a {
   height: 40px;
 }
 
-.header__tdf-logo__mobile {
-  display: none;
-}
-
-.burger {
-  display: none;
-}
-
 .main-header-nav {
   display: flex;
   align-items: center; 
@@ -115,69 +111,105 @@ a {
   height: 100%;
 }
 
+.main-header-nav a.active {
+  color: #FFBC00; 
+  font-weight: bold;
+  border-bottom: 2px solid #FFBC00;
+}
+
 .main-header-nav a + a {
   margin-left: 50px;
 }
 
-.main-1 .container {
+.colnago .container {
   width: 100%;
   height: 100%; 
 }
 
-.main-1 {
-  flex-grow: 1;
-  height: 100vh;
+.colnago-bg {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/pogacar_yellow_colnago.webp) no-repeat;
+  ), url(/colnago.webp) no-repeat;
   background-size: cover;
 }
 
-.main-1-title {
+.cervelo-bg {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/cervelo.webp) no-repeat;
+  background-size: cover;
+  background-position: center 65%;
+}
+
+.pinarello-bg {
+  background:  url(/pinarello.jpg) no-repeat;
+  background-size: cover;
+  background-position: center 65%;
+  padding-bottom: 20px;
+}
+
+.sworks-bg {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/sworks.webp) no-repeat;
+  background-size: cover;
+  background-position: center 65%;
+}
+
+.bikes-section {
+  flex-grow: 1;
+  height: 100vh;
+}
+
+.bikes-section__title {
   text-align: center;
   width: 100%;
   font-size: 100px;
   font-style: italic;
 }
 
-.main-1-text {
+.bikes-section__text {
   font-size: 26px;
 }
 
-.main-1-button {
-  background-color: rgb(220, 20, 5);
+.bikes-section__button {
+  background-color: transparent;
+  background-repeat: no-repeat;
   font-size: 20px;
   font-weight: 700;
-  border: 0;
+  color: #fff;
+  border: 2px solid #fff;
   border-radius: 14px;
   padding: 15px;
   margin: 20px auto;
   cursor: pointer;
-  transition: transform 0.5s ease-in-out, opacity 0.5s;
+  transition: transform .5s ease-in-out, .8s  ease;
 }
 
-.main-1-button:hover {
-  transform: scale(1.1);
+.bikes-section__button:hover {
+  background-color: #FFBC00;
+  border-color: #FFBC00;
 }
 
-.main-2 {
-  flex-grow: 1;
-  height: 100vh;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)
-  ), url(/jonas_cervelo.webp) no-repeat;
-  background-size: cover;
+.pinarello__button:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
 }
 
-.main-2-title {
-  width: 100%;
+.sworks__button:hover {
+  background-color: #2A8DD9;
+  border-color: #2A8DD9;
+}
+
+.cervelo-title {
   font-size: 50px;
-  font-style: italic;
 }
 
-.main-2-text {
+.cervelo-text {
   padding: 30px 0 15px 0;
 }
 
@@ -188,12 +220,6 @@ a {
 .buy-now q {
   font-size: 22px;
   font-style: italic;
-}
-
-.main-header-nav a.active {
-  color: #FFBC00; 
-  font-weight: bold;
-  border-bottom: 2px solid #FFBC00;
 }
 
 .main-3, .main-4, .main-gear, .main-support {
