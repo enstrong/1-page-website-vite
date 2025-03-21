@@ -31,11 +31,6 @@ export default function Header({ activeTab, setActiveTab }) {
           <a href="#" className={activeTab === "support" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleTabClick("support"); }}>Support</a>
           <a href="#"><img src={ShoppingCart} alt="Cart" className="header__logo header__logo-cart"/></a>
         </nav>
-        <button className={`burger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
-          <div className="burger-line"></div>
-          <div className="burger-line"></div>
-          <div className="burger-line"></div>
-        </button>
       </div>
     </div>
   );

@@ -191,9 +191,9 @@ a {
 }
 
 .main-header-nav a.active {
-  color: #ff6b00; 
+  color: #FFBC00; 
   font-weight: bold;
-  border-bottom: 2px solid #ff6b00;
+  border-bottom: 2px solid #FFBC00;
 }
 
 .main-3, .main-4, .main-gear, .main-support {

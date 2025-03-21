@@ -14,10 +14,10 @@ export default function App() {
     <div className="wrapper">
       <Header activeTab={activeTab} setActiveTab={setActiveTab}/>
 
-      {activeTab === "bikes" && <Bikes />}
-      {activeTab === "teams" && <Teams />}
-      {activeTab === "gear" && <Gear />}
-      {activeTab === "support" && <Support />}
+      {activeTab === "bikes" && <Bikes/>}
+      {activeTab === "teams" && <Teams/>}
+      {activeTab === "gear" && <Gear/>}
+      {activeTab === "support" && <Support/>}
      
       <Footer/>
     </div>
