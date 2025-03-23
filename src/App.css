@@ -27,7 +27,7 @@ a {
 
 .container {
   margin: 0px auto;
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 0 15px;
 }
 
@@ -130,7 +130,7 @@ a {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/colnago.webp) no-repeat;
+  ), url(/bg/colnago.webp) no-repeat;
   background-size: cover;
 }
 
@@ -138,13 +138,13 @@ a {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/cervelo.webp) no-repeat;
+  ), url(/bg/cervelo.webp) no-repeat;
   background-size: cover;
   background-position: center 65%;
 }
 
 .pinarello-bg {
-  background:  url(/pinarello.jpg) no-repeat;
+  background:  url(/bg/pinarello.jpg) no-repeat;
   background-size: cover;
   background-position: center 65%;
   padding-bottom: 20px;
@@ -154,7 +154,7 @@ a {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/sworks.webp) no-repeat;
+  ), url(/bg/sworks.webp) no-repeat;
   background-size: cover;
   background-position: center 65%;
 }
@@ -222,7 +222,19 @@ a {
   font-style: italic;
 }
 
-.main-3, .main-4, .main-gear, .main-support {
+.teams-section {
+  background-color: #000;
+}
+
+.teams-section__group-logos {
+  width: 1000px;
+}
+
+.teams-section__logo {
+  height: 150px;
+}
+
+.uaeteam, .main-4, .gear, .support {
   min-height: 100vh;
   width: 100%;
   background-size: cover;
@@ -230,49 +242,46 @@ a {
   position: relative;
 }
 
-.main-3 {
-  flex-grow: 1;
-  height: 100vh;
+.uaeteam {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/jonas_cervelo.webp) no-repeat;
+  ), url(/bg/UAEteam.jpg) no-repeat;
   background-size: cover;
+  background-position: center 50%;
 }
 
 .main-4 {
-  flex-grow: 1;
-  height: 100vh;
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/jonas_cervelo.webp) no-repeat;
+  ), url(/bg/Astana_TdF2014_Arc.jpg) no-repeat;
   background-size: cover;
 }
 
-.main-gear {
-  flex-grow: 1;
-  height: 100vh;
+.gear {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/jonas_cervelo.webp) no-repeat;
+  ), url(/bg/Astana_TdF2014.jpg) no-repeat;
   background-size: cover;
+  background-position: center 50%;
 }
 
-.main-support {
-  flex-grow: 1;
-  height: 100vh;
+.support {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/jonas_cervelo.webp) no-repeat;
+  ), url(/bg/cervelo-support.jpg) no-repeat;
   background-size: cover;
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: #a1a1a1;
+  z-index: 50; 
 }
 
 .our-social-networks {

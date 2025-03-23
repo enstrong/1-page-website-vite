@@ -13,7 +13,7 @@ export default function Bikes() {
 
     <div className="cervelo-bg bikes-section d-flex align-center">
       <div className="container d-flex align-center justify-center f-column">
-        <h1 className="bikes-section__title cervelo-title">Cervélo R5</h1>
+        <h1 className="bikes-section__title uppercase">The Elegant</h1>
         <section className="buy-now">
           <p className="bikes-section__text cervelo-text">Jonas Vingegaard, twice Tour de France Champion rides <i>Cervélo R5</i></p>
           <q>The Cervélo R5 is designed for all the glory and fanfare that comes with a summit and a finish on the descent below. A climbing bike that is light, aerodynamic and stiff, it shows that smooth handling, poise, and unmatched speed can come in one stealthy package.</q>

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TdFlogo from '/TdF_logo_white.png';
-import ShoppingCart from '/shopping-cart-white.png';
+import TdFlogo from '/icons/TdF_logo_white.png';
+import ShoppingCart from '/icons/shopping-cart-white.png';
 
 export default function Header({ activeTab, setActiveTab }) {
   const [isOpen, setIsOpen] = useState(false);
