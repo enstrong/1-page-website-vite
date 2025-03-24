@@ -1,0 +1,65 @@
+.teams-section {
+  background-color: #000;
+}
+
+.teams-section__group-logos {
+  width: 1000px;
+}
+
+.teams-section__logo {
+  height: 150px;
+  display: inline-block;
+  transition: transform .3s ease-in-out, .3s ease-in-out;
+}
+
+.teams-section__logo:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.teams-section__logo-uae:hover {
+  box-shadow: 0 15px 15px #ff00004d;
+}
+
+.teams-section__logo-visma:hover {
+  box-shadow: 0 15px 15px #ffcc004d;
+}
+
+.teams-section__logo-astana:hover,
+.teams-section__logo-sky:hover {
+  box-shadow: 0 15px 15px #00b4ffb3;
+}
+
+/* .teams-section__group-logos a:nth-child(1) .teams-section__logo:hover {
+  box-shadow: 0 0 15px 5px #ff000099;
+}
+
+.teams-section__group-logos a:nth-child(2) .teams-section__logo:hover {
+  box-shadow: 0 0 15px 5px #ffdf00cc;
+}
+
+.teams-section__group-logos a:nth-child(3) .teams-section__logo:hover {
+  box-shadow: 0 0 15px 5px #00b4ffb3;
+}
+
+.teams-section__group-logos a:nth-child(4) .teams-section__logo:hover {
+  box-shadow: 0 0 15px 5px #0064ffb3;
+} */
+
+
+.uaeteam {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/UAEteam.jpg) no-repeat;
+  background-size: cover;
+  background-position: center 50%;
+}
+
+.teamvisma {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/Astana_TdF2014_Arc.jpg) no-repeat;
+  background-size: cover;
+}

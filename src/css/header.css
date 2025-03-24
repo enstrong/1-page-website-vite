@@ -1,0 +1,62 @@
+
+.header {
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header a {
+  font-weight: 700;
+  font-size: 20px;
+  transition: .5s;
+  -webkit-transition: .5s;
+}
+
+.header a:hover {
+  opacity: .8;
+  font-size: 24px;
+}
+
+.header__logo {
+  vertical-align: middle;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.header__logo:hover {
+  transform: scale(1.2); 
+  opacity: 0.8;
+}
+
+.header__logo-tdf {
+  height: 90px;
+}
+
+.header__logo-cart {
+  height: 40px;
+}
+
+.main-header-nav {
+  display: flex;
+  align-items: center; 
+  height: 100%; 
+}
+
+.main-header-nav a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.main-header-nav a.active {
+  color: #FFBC00; 
+  font-weight: bold;
+  border-bottom: 2px solid #FFBC00;
+}
+
+.main-header-nav a + a {
+  margin-left: 50px;
+}

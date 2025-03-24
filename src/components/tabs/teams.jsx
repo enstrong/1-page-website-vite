@@ -1,21 +1,38 @@
-import UAE from '/team-logos/UAE_team_logo.png';
-import Visma from '/team-logos/Team_Visma_logo.png';
-import Sky from '/team-logos/Team_Sky_logo.jpg';
-import Astana from '/team-logos/Astana_Team_Logo.jpg';
+import '@/css/App.css'
+import '@/css/tabs/teams.css'
+import UAE from '/team-logos/UAE_team_logo.png'
+import Visma from '/team-logos/Team_Visma_logo.png'
+import Sky from '/team-logos/Team_Sky_logo.jpg'
+import Astana from '/team-logos/Astana_Team_Logo.jpg'
 
 export default function Teams() {
+  function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   return (
     <>
-      <div className="teams-section bikes-section d-flex align-center">
+      <div className="section teams-section d-flex align-center">
         <div className="container d-flex align-center justify-space-between teams-section__group-logos">
-          <a href=""><img src={UAE} alt="" className="teams-section__logo"/></a>
-          <a href=""><img src={Visma} alt="" className="teams-section__logo"/></a>
-          <a href=""><img src={Sky} alt="" className="teams-section__logo"/></a>
-          <a href=""><img src={Astana} alt="" className="teams-section__logo"/></a>
+          <div onClick={() => scrollToElement('uae')}>
+            <img src={UAE} alt="uae team logo" className="teams-section__logo teams-section__logo-uae"/>
+          </div>
+          <div onClick={() => scrollToElement('visma')}>
+            <img src={Visma} alt="team visma logo" className="teams-section__logo teams-section__logo-visma"/>
+          </div>
+          <div onClick={() => scrollToElement('sky')}>
+            <img src={Sky} alt="team sky logo" className="teams-section__logo teams-section__logo-sky"/>
+          </div>
+          <div onClick={() => scrollToElement('astana')}>
+            <img src={Astana} alt="astana team logo" className="teams-section__logo teams-section__logo-astana"/>
+          </div>
         </div>
       </div>
 
-      <div className="uaeteam bikes-section d-flex align-center">
+      <div id='uae' className="section uaeteam d-flex align-center">
         <div className="container d-flex align-center justify-center f-column">
           <h1 className="uaeteam-title uppercase">UAE Team Emirates</h1>
           <section className="team-info">
@@ -25,11 +42,11 @@ export default function Teams() {
         </div>
       </div>
   
-      <div className="main-4 bikes-section d-flex align-center">
+      <div id='visma' className="section teamvisma section d-flex align-center">
         <div className="container d-flex align-center justify-center f-column">
-          <h1 className="main-4-title">Team Visma | Lease a Bike</h1>
+          <h1 className="teamvisma-title">Team Visma | Lease a Bike</h1>
           <section className="team-info">
-            <p className="uaeteam-text main-4-text">With Jonas Vingegaard as team leader, Visma | Lease a Bike continues to be a major force in professional cycling</p>
+            <p className="uaeteam-text teamvisma-text">With Jonas Vingegaard as team leader, Visma | Lease a Bike continues to be a major force in professional cycling</p>
             <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
           </section>
         </div>

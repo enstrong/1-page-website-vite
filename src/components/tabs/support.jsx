@@ -1,7 +1,10 @@
+import '@/css/App.css'
+import '@/css/tabs/support.css';
+
 export default function Support() {
   return (
     <>
-      <div className="support bikes-section d-flex align-center">
+      <div className="section support d-flex align-center">
         <div className="container d-flex align-center justify-center f-column">
           <h1 className="support-title uppercase">Customer Support</h1>
           <section className="support-info">

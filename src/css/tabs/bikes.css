@@ -1,0 +1,95 @@
+.colnago .container {
+  width: 100%;
+  height: 100%; 
+}
+
+.colnago-bg {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/colnago.webp) no-repeat;
+  background-size: cover;
+}
+
+.cervelo-bg {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/cervelo.webp) no-repeat;
+  background-size: cover;
+  background-position: center 65%;
+}
+
+.pinarello-bg {
+  background:  url(/bg/pinarello.jpg) no-repeat;
+  background-size: cover;
+  background-position: center 65%;
+  padding-bottom: 20px;
+}
+
+.sworks-bg {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/sworks.webp) no-repeat;
+  background-size: cover;
+  background-position: center 65%;
+}
+
+.bikes-section__title {
+  text-align: center;
+  width: 100%;
+  font-size: 100px;
+  font-style: italic;
+}
+
+.bikes-section__text {
+  font-size: 26px;
+}
+
+.bikes-section__button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 14px;
+  padding: 15px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: transform .5s ease-in-out, .8s  ease;
+}
+
+.bikes-section__button:hover {
+  background-color: #FFBC00;
+  border-color: #FFBC00;
+}
+
+.pinarello__button:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
+.sworks__button:hover {
+  background-color: #2A8DD9;
+  border-color: #2A8DD9;
+}
+
+.cervelo-title {
+  font-size: 50px;
+}
+
+.cervelo-text {
+  padding: 30px 0 15px 0;
+}
+
+.buy-now {
+  text-align: center;
+}
+
+.buy-now q {
+  font-size: 22px;
+  font-style: italic;
+}

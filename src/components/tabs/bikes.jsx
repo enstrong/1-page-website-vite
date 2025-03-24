@@ -1,7 +1,10 @@
+import '@/css/App.css'
+import '@/css/tabs/bikes.css';
+
 export default function Bikes() {
   return (
     <>
-    <div className="colnago-bg bikes-section d-flex align-center">
+    <div className="section colnago-bg d-flex align-center">
       <div className="container d-flex align-center justify-center f-column">
         <h1 className="bikes-section__title uppercase">For the winners</h1>
         <section className="buy-now">
@@ -11,7 +14,7 @@ export default function Bikes() {
       </div>
     </div>
 
-    <div className="cervelo-bg bikes-section d-flex align-center">
+    <div className="section cervelo-bg d-flex align-center">
       <div className="container d-flex align-center justify-center f-column">
         <h1 className="bikes-section__title uppercase">The Elegant</h1>
         <section className="buy-now">
@@ -22,7 +25,7 @@ export default function Bikes() {
       </div>
     </div>
 
-    <div className="pinarello-bg bikes-section d-flex align-end">
+    <div className="section pinarello-bg d-flex align-end">
       <div className="container d-flex f-column">
         <h1 className="bikes-section__title uppercase">Falling in love</h1>
         <section className="buy-now">
@@ -32,7 +35,7 @@ export default function Bikes() {
       </div>
     </div>
 
-    <div className="sworks-bg bikes-section d-flex align-center">
+    <div className="section sworks-bg d-flex align-center">
       <div className="container d-flex f-column">
         <h1 className="bikes-section__title uppercase">S-Works</h1>
         <section className="buy-now">
