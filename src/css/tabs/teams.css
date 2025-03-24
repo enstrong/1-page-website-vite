@@ -17,36 +17,6 @@
   cursor: pointer;
 }
 
-.teams-section__logo-uae:hover {
-  box-shadow: 0 15px 15px #ff00004d;
-}
-
-.teams-section__logo-visma:hover {
-  box-shadow: 0 15px 15px #ffcc004d;
-}
-
-.teams-section__logo-astana:hover,
-.teams-section__logo-sky:hover {
-  box-shadow: 0 15px 15px #00b4ffb3;
-}
-
-/* .teams-section__group-logos a:nth-child(1) .teams-section__logo:hover {
-  box-shadow: 0 0 15px 5px #ff000099;
-}
-
-.teams-section__group-logos a:nth-child(2) .teams-section__logo:hover {
-  box-shadow: 0 0 15px 5px #ffdf00cc;
-}
-
-.teams-section__group-logos a:nth-child(3) .teams-section__logo:hover {
-  box-shadow: 0 0 15px 5px #00b4ffb3;
-}
-
-.teams-section__group-logos a:nth-child(4) .teams-section__logo:hover {
-  box-shadow: 0 0 15px 5px #0064ffb3;
-} */
-
-
 .uaeteam {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
