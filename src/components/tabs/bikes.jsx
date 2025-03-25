@@ -8,7 +8,7 @@ export default function Bikes() {
       <div className="container d-flex align-center justify-center f-column">
         <h1 className="bikes-section__title uppercase">For the winners</h1>
         <section className="buy-now">
-          <p className="bikes-section__text">Tadej Pogacar, 3-time Tour de France Champion rides <i>Colnago V4Rs</i></p>
+          <p className="bikes-section__text">Tadej Pogačar, 3-time Tour de France Champion rides <i>Colnago V4Rs</i></p>
           <button className="bikes-section__button d-flex">Buy now &#8594;</button>
         </section>
       </div>

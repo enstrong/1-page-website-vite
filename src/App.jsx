@@ -6,6 +6,7 @@ import Bikes from '@/components/tabs/bikes.jsx'
 import Teams from '@/components/tabs/teams.jsx'
 import Gear from '@/components/tabs/gear.jsx'
 import Support from '@/components/tabs/support.jsx'
+import ScrollToTop from '@/components/scrollTop.jsx' 
 
 export default function App() {
     const [activeTab, setActiveTab] = useState("bikes");
@@ -20,6 +21,7 @@ export default function App() {
       {activeTab === "support" && <Support/>}
      
       <Footer/>
+      <ScrollToTop />
     </div>
   );
 }

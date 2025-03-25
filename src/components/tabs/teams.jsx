@@ -36,8 +36,16 @@ export default function Teams() {
         <div className="container d-flex align-center justify-center f-column">
           <h1 className="uaeteam-title uppercase">UAE Team Emirates</h1>
           <section className="team-info">
-            <p className="uaeteam-text">Led by Tadej Pogacar, UAE Team Emirates has dominated the Tour de France in recent years</p>
-            <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
+            <p className="uaeteam-text">Led by Tadej Pogačar, UAE Team Emirates has dominated the Tour de France in recent years.</p>
+            <div className="team-achievements">
+              <h3>Key Achievements:</h3>
+              <ul>
+                <li>Tour de France: 2x Winner (2020, 2021 - Tadej Pogačar)</li>
+                <li>UCI Road World Championships Road Race: 1x Winner (2020 - Tadej Pogačar)</li>
+                <li>Liège–Bastogne–Liège: 2x Winner (2020, 2021 - Tadej Pogačar)</li>
+                <li>Milan-San Remo: 1x Winner (2020 - Tadej Pogačar)</li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
@@ -46,8 +54,16 @@ export default function Teams() {
         <div className="container d-flex align-center justify-center f-column">
           <h1 className="teamvisma-title">Team Visma | Lease a Bike</h1>
           <section className="team-info">
-            <p className="uaeteam-text teamvisma-text">With Jonas Vingegaard as team leader, Visma | Lease a Bike continues to be a major force in professional cycling</p>
-            <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
+            <p className="uaeteam-text teamvisma-text">With Jonas Vingegaard as team leader, Visma | Lease a Bike continues to be a major force in professional cycling.</p>
+            <div className="team-achievements">
+              <h3>Key Achievements:</h3>
+              <ul>
+                <li>Tour de France: 2x Winner (2022, 2023 - Jonas Vingegaard)</li>
+                <li>Vuelta a España: 1x Winner (2022 - Remco Evenepoel)</li>
+                <li>UCI Road World Championships Road Race: Recent Podium Finishes</li>
+                <li>Multiple Stage Race Victories</li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
@@ -56,18 +72,34 @@ export default function Teams() {
         <div className="container d-flex align-center justify-center f-column">
           <h1 className="teamvisma-title">Team Sky | INEOS Grenadiers</h1>
           <section className="team-info">
-            <p className="uaeteam-text teamvisma-text">With 7 Tour de France victories in just eight years, Team Sky—now INEOS Grenadiers—redefined dominance in professional cycling.</p>
-            <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
+            <p className="uaeteam-text teamvisma-text">With 7 Tour de France victories in just eight years, INEOS Grenadiers redefined dominance in professional cycling.</p>
+            <div className="team-achievements">
+              <h3>Key Achievements:</h3>
+              <ul>
+                <li>Tour de France: 7x Winner (2012-2018 - Bradley Wiggins, Chris Froome, Geraint Thomas)</li>
+                <li>Giro d'Italia: 3x Winner (2013, 2018, 2022)</li>
+                <li>UCI Road World Championships: Multiple Victories</li>
+                <li>Olympic Gold Medals in Cycling</li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
   
       <div id='astana' className="section astana section d-flex align-center">
         <div className="container d-flex align-center justify-center f-column">
-          <h1 className="teamvisma-title">Team Astana</h1>
+          <h1 className="teamvisma-title">Astana Qazaqstan Team</h1>
           <section className="team-info">
-            <p className="uaeteam-text teamvisma-text">A team built on resilience and strategy, Astana Qazaqstan Team has showcased its strength on cycling’s biggest stage, claiming Tour de France glory in 2014.</p>
-            <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
+            <p className="uaeteam-text teamvisma-text">A team built on resilience and strategy, Astana Qazaqstan Team has showcased its strength on cycling's biggest stage.</p>
+            <div className="team-achievements">
+              <h3>Key Achievements:</h3>
+              <ul>
+                <li>Tour de France: 1x Winner (2014 - Vincenzo Nibali)</li>
+                <li>Giro d'Italia: 1x Winner (2015 - Fabio Aru)</li>
+                <li>Vuelta a España: 1x Winner (2015 - Fabio Aru)</li>
+                <li>Multiple Grand Tour Stage Victories</li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>

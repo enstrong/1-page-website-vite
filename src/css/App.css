@@ -67,3 +67,26 @@ a {
   background-position: center;
   position: relative;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 300px;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #565656;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #565656 transparent;
+}

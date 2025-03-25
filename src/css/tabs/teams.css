@@ -35,6 +35,12 @@
   background-position: center 50%;
 }
 
+.uaeteam-text, .teamvisma-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
 .teamsky {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
@@ -51,4 +57,40 @@
   ), url(/bg/Astana_TdF2014.jpg) no-repeat;
   background-size: cover;
   background-position: center 50%;
+}
+
+.team-info {
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.team-achievements {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.team-achievements h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-achievements ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.team-achievements li {
+  color: #e0e0e0;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
 }
