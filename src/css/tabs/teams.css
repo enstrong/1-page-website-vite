@@ -21,7 +21,7 @@
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/bg/UAEteam.jpg) no-repeat;
+  ), url(/bg/Team_UAE.jpg) no-repeat;
   background-size: cover;
   background-position: center 50%;
 }
@@ -30,6 +30,25 @@
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/bg/Astana_TdF2014_Arc.jpg) no-repeat;
+  ), url(/bg/Team_Visma.jpg) no-repeat;
   background-size: cover;
+  background-position: center 50%;
+}
+
+.teamsky {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/Team_Sky.jpg) no-repeat;
+  background-size: cover;
+  background-position: center 10%;
+}
+
+.astana {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url(/bg/Astana_TdF2014.jpg) no-repeat;
+  background-size: cover;
+  background-position: center 50%;
 }

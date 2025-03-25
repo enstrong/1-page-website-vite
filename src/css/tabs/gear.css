@@ -6,3 +6,69 @@
   background-size: cover;
   background-position: center 50%;
 }
+
+.gear-title {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.gear-text {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.gear-button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.gear-button:hover {
+  background-color: #FFBC00;
+  border-color: #FFBC00;
+}
+
+.gear-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+  max-width: 800px;
+}
+
+.gear-category {
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gear-category:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.gear-category-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.gear-category-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.gear-category-description {
+  font-size: 16px;
+  color: #ddd;
+}

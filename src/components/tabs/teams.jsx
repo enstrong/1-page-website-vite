@@ -51,6 +51,26 @@ export default function Teams() {
           </section>
         </div>
       </div>
+  
+      <div id='sky' className="section teamsky section d-flex align-center">
+        <div className="container d-flex align-center justify-center f-column">
+          <h1 className="teamvisma-title">Team Sky | INEOS Grenadiers</h1>
+          <section className="team-info">
+            <p className="uaeteam-text teamvisma-text">With 7 Tour de France victories in just eight years, Team Sky—now INEOS Grenadiers—redefined dominance in professional cycling.</p>
+            <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
+          </section>
+        </div>
+      </div>
+  
+      <div id='astana' className="section astana section d-flex align-center">
+        <div className="container d-flex align-center justify-center f-column">
+          <h1 className="teamvisma-title">Team Astana</h1>
+          <section className="team-info">
+            <p className="uaeteam-text teamvisma-text">A team built on resilience and strategy, Astana Qazaqstan Team has showcased its strength on cycling’s biggest stage, claiming Tour de France glory in 2014.</p>
+            <button className="bikes-section__button uaeteam-button d-flex">Team details &#8594;</button>
+          </section>
+        </div>
+      </div>
     </>
   );
 }
