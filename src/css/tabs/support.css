@@ -5,3 +5,9 @@
   ), url(/bg/cervelo-support.jpg) no-repeat;
   background-size: cover;
 }
+
+.support button:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+}

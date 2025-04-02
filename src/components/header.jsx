@@ -1,6 +1,7 @@
 import { useState } from "react"
 import '@/css/App.css'
 import '@/css/header.css'
+import { scrollToTop } from '@/components/scrollTop.jsx'
 import TdFlogo from '/icons/TdF_logo_white.png'
 import ShoppingCart from '/icons/shopping-cart-white.png'
 
@@ -13,9 +14,13 @@ export default function Header({ activeTab, setActiveTab }) {
   };
 
   const handleTabClick = (tab) => {
-    setActiveTab(tab);
-    if (isOpen) {
-      toggleMenu();
+    if (activeTab === tab) {
+      scrollToTop();
+    } else {
+      setActiveTab(tab);
+      if (isOpen) {
+        toggleMenu();
+      }
     }
   };
 

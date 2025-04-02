@@ -40,9 +40,9 @@ export default function Teams() {
             <div className="team-achievements">
               <h3>Key Achievements:</h3>
               <ul>
-                <li>Tour de France: 2x Winner (2020, 2021 - Tadej Pogačar)</li>
-                <li>UCI Road World Championships Road Race: 1x Winner (2020 - Tadej Pogačar)</li>
-                <li>Liège–Bastogne–Liège: 2x Winner (2020, 2021 - Tadej Pogačar)</li>
+                <li>Tour de France: 3x Winner (2020-21, 2024 - Tadej Pogačar)</li>
+                <li>UCI Road World Championships Road Race: 2x Winner (2020, 2024 - Tadej Pogačar)</li>
+                <li>Liège–Bastogne–Liège: 2x Winner (2020-21 - Tadej Pogačar)</li>
                 <li>Milan-San Remo: 1x Winner (2020 - Tadej Pogačar)</li>
               </ul>
             </div>
