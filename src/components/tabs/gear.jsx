@@ -56,34 +56,6 @@ export default function Gear() {
           </div>
         </div>
       </div>
-
-      <div className="gear section d-flex align-center">
-        <div className="container d-flex align-center justify-center f-column">
-          <div className="gear-categories">
-            {gearCategories.map((category, index) => (
-              <div key={index} className="gear-category">
-                <img src={category.icon} alt={category.title} className="gear-category-icon" />
-                <h3 className="gear-category-title">{category.title}</h3>
-                <p className="gear-category-description">{category.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      
-      <div className="gear section d-flex align-center">
-        <div className="container d-flex align-center justify-center f-column">
-          <div className="gear-categories">
-            {gearCategories.map((category, index) => (
-              <div key={index} className="gear-category">
-                <img src={category.icon} alt={category.title} className="gear-category-icon" />
-                <h3 className="gear-category-title">{category.title}</h3>
-                <p className="gear-category-description">{category.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </>
   );
 }
