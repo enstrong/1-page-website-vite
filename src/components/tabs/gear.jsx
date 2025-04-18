@@ -7,13 +7,17 @@ import Gloves from '/icons/gloves-icon.svg'
 import Jersey from '/icons/jersey-icon.svg'
 import Shoes from '/icons/shoes-icon.svg'
 import Bottle from '/icons/water-bottle-icon.svg'
+import helmetPogacar from '/products/helmet_pogacar.png'
+import helmetTT from '/products/helmet_evenepoel_TT.webp'
+import helmetVisma from '/products/helmet_teamvisma.webp'
 
 export default function Gear() {
   const [gearCategories, setGearCategories] = useState([]);
+  const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  const iconMap = {
+  const categoryIconMap = {
     'Helmet': Helmet,
     'Glasses': Glasses,
     'Gloves': Gloves,
@@ -21,34 +25,56 @@ export default function Gear() {
     'Shoes': Shoes,
     'Bottle': Bottle
   };
+  
+  const productIconMap = {
+    'helmetPogacar': helmetPogacar,
+    'helmetTT': helmetTT,
+    'helmetVisma': helmetVisma
+  };
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/categories');
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+        // Fetch categories
+        const categoriesResponse = await fetch('http://localhost:5000/api/categories');
+        if (!categoriesResponse.ok) {
+          throw new Error(`HTTP error! Categories Status: ${categoriesResponse.status}`);
         }
-        
-        const data = await response.json();
-        
-        const mappedCategories = data.map(category => ({
+        const categoriesData = await categoriesResponse.json();
+        const mappedCategories = categoriesData.map(category => ({
           ...category,
-          icon: iconMap[category.icon] || Bottle 
+          icon: categoryIconMap[category.icon] || Bottle 
+        }));
+        setGearCategories(mappedCategories);
+        
+        // Fetch products
+        const productsResponse = await fetch('http://localhost:5000/api/products');
+        if (!productsResponse.ok) {
+          throw new Error(`HTTP error! Products Status: ${productsResponse.status}`);
+        }
+        const productsData = await productsResponse.json();
+        
+        // Map product icons
+        const mappedProducts = productsData.map(product => ({
+          ...product,
+          iconSrc: productIconMap[product.icon] || null
         }));
         
-        setGearCategories(mappedCategories);
+        setProducts(mappedProducts);
         setIsLoading(false);
       } catch (err) {
-        console.error('Error fetching categories:', err);
+        console.error('Error fetching data:', err);
         setError(err.message);
         setIsLoading(false);
       }
     };
 
-    fetchCategories();
+    fetchData();
   }, []);
+
+  const getProductsBySection = (section) => {
+    return products.filter(product => product.section === section);
+  };
 
   function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
@@ -57,7 +83,7 @@ export default function Gear() {
     }
   }
 
-  if (isLoading) return <div className="loading">Loading categories...</div>;
+  if (isLoading) return <div className="loading">Loading data...</div>;
   if (error) return <div className="error">Error: {error}</div>;
 
   return (
@@ -76,13 +102,54 @@ export default function Gear() {
         </div>
       </div>
       
-      {gearCategories.map((category) => (
-        <div key={`section-${category.category_id}`} id={category.section} className="gear section d-flex align-center">
-          <div className="container d-flex align-center justify-center f-column">
-            <h1>There'll be {category.name.toLowerCase()}</h1>
+      {gearCategories.map((category) => {
+        const sectionProducts = getProductsBySection(category.section);
+        
+        return (
+          <div key={`section-${category.category_id}`} id={category.section} className="gear_products section d-flex align-center">
+            <div className="container d-flex align-center justify-center f-column">
+              <h1>{category.name}</h1>
+              <div className="products-container">
+                {sectionProducts.length > 0 ? (
+                  <div className="gear-categories">
+                    {sectionProducts.map(product => (
+                      <div key={product.product_id} className="gear-category gear_product">
+                        {product.iconSrc ? (
+                          <div className="product-image">
+                            <img 
+                              src={product.iconSrc} 
+                              alt={product.name} 
+                              className="gear-product-icon"
+                              onError={(e) => {
+                                console.error(`Failed to load image for ${product.name}`, e);
+                                e.target.src = categoryIconMap[category.icon];
+                              }}
+                            />
+                          </div>
+                        ) : (
+                          <div className="product-image">
+                            <img 
+                              src={categoryIconMap[category.icon]} 
+                              alt={product.name}
+                              className="gear-category-icon" 
+                            />
+                          </div>
+                        )}
+                        <h3 className="gear-category-title">{product.name}</h3>
+                        <p className="gear-category-description">{product.description}</p>
+                        <p className="gear-category-title">${product.price}</p>
+                        <button className="bikes-section__button d-flex">Add to Cart</button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p>No products available in this category yet.</p>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 }
