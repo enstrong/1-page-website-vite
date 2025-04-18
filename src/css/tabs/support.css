@@ -6,8 +6,87 @@
   background-size: cover;
 }
 
+.support-title {
+  margin-bottom: 10px;
+}
+
 .support button:hover {
   background-color: #fff;
   border-color: #fff;
   color: #000;
+}
+
+.faq-container {
+  width: 100%;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.faq-item {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.faq-toggle-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 20px;
+  }
+  to {
+    max-height: 500px;
+    opacity: 1;
+    padding: 15px 20px 20px;
+  }
+}
+
+.support-buttons {
+  margin-top: 20px;
+  width: 100%;
+  gap: 20px;
 }
