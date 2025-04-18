@@ -2,7 +2,6 @@ import '@/css/App.css'
 import '@/css/footer.css'
 import Telegram from '/icons/telegram.svg'
 import Twitter from '/icons/twitter.svg'
-import Vk from '/icons/vk-icon.svg'
 
 export default function Footer() {
   return (
@@ -16,9 +15,6 @@ export default function Footer() {
             </a>
             <a href="#" target="_blank">
               <img src={Telegram} className="link" alt="Telegram" />
-            </a>
-            <a href="#" target="_blank">
-              <img src={Vk} className="link" alt="VK" />
             </a>
           </div>
         </div>

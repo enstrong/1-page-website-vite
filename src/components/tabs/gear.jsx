@@ -13,7 +13,6 @@ export default function Gear() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  // Map database icon names to local SVG imports
   const iconMap = {
     'Helmet': Helmet,
     'Glasses': Glasses,
@@ -80,7 +79,7 @@ export default function Gear() {
       {gearCategories.map((category) => (
         <div key={`section-${category.category_id}`} id={category.section} className="gear section d-flex align-center">
           <div className="container d-flex align-center justify-center f-column">
-            <h1>That's {category.name.toLowerCase()}</h1>
+            <h1>There'll be {category.name.toLowerCase()}</h1>
           </div>
         </div>
       ))}
