@@ -34,6 +34,15 @@ app.get('/api/categories', (req, res) => {
     });
 });
 
+app.get('/api/products', (req, res) => {
+  pool.query('SELECT p.*, c.section FROM products p JOIN categories c ON p.category_id = c.category_id')
+    .then(result => res.json(result.rows))
+    .catch(err => {
+      console.error('Error fetching products:', err.stack || err);
+      res.status(500).json({ error: err.message });
+    });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

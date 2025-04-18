@@ -7,9 +7,9 @@ import Gloves from '/icons/gloves-icon.svg'
 import Jersey from '/icons/jersey-icon.svg'
 import Shoes from '/icons/shoes-icon.svg'
 import Bottle from '/icons/water-bottle-icon.svg'
-import helmetPogacar from '/products/helmet_pogacar.png'
-import helmetTT from '/products/helmet_evenepoel_TT.webp'
-import helmetVisma from '/products/helmet_teamvisma.webp'
+// import helmetPogacar from '/products/helmet_pogacar.png'
+// import helmetTT from '/products/helmet_evenepoel_TT.webp'
+// import helmetVisma from '/products/helmet_teamvisma.webp'
 
 export default function Gear() {
   const [gearCategories, setGearCategories] = useState([]);
@@ -35,7 +35,7 @@ export default function Gear() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch categories
+        // fetching categories
         const categoriesResponse = await fetch('http://localhost:5000/api/categories');
         if (!categoriesResponse.ok) {
           throw new Error(`HTTP error! Categories Status: ${categoriesResponse.status}`);
@@ -47,14 +47,14 @@ export default function Gear() {
         }));
         setGearCategories(mappedCategories);
         
-        // Fetch products
+        // fetching products
         const productsResponse = await fetch('http://localhost:5000/api/products');
         if (!productsResponse.ok) {
           throw new Error(`HTTP error! Products Status: ${productsResponse.status}`);
         }
         const productsData = await productsResponse.json();
         
-        // Map product icons
+        // the icons
         const mappedProducts = productsData.map(product => ({
           ...product,
           iconSrc: productIconMap[product.icon] || null
@@ -114,7 +114,7 @@ export default function Gear() {
                   <div className="gear-categories">
                     {sectionProducts.map(product => (
                       <div key={product.product_id} className="gear-category gear_product">
-                        {product.iconSrc ? (
+                        {/* {product.iconSrc ? (
                           <div className="product-image">
                             <img 
                               src={product.iconSrc} 
@@ -134,7 +134,7 @@ export default function Gear() {
                               className="gear-category-icon" 
                             />
                           </div>
-                        )}
+                        )} */}
                         <h3 className="gear-category-title">{product.name}</h3>
                         <p className="gear-category-description">{product.description}</p>
                         <p className="gear-category-title">${product.price}</p>
