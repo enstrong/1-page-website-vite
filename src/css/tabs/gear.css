@@ -40,7 +40,7 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 50px;
-  max-width: 1200px;
+  max-width: 800px;
 }
 
 .gear-category {
@@ -73,13 +73,17 @@
   color: #ddd;
 }
 
-.gear_products {
+.gear-products-bg {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
-  ), url(/bg/gear-products-helmets-remco-paris.avif) no-repeat;
+  ), url(/bg/remco-evenepoel-paris.avif) no-repeat;
   background-size: cover;
-  background-position: center 70%;
+  background-position: center 80%;
+}
+
+.gear-products {
+  max-width: 1200px;
 }
 
 .gear_product {
