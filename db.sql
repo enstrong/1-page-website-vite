@@ -48,14 +48,17 @@ CREATE TABLE order_items (
 );
 
 INSERT INTO categories (icon, name, description, section) VALUES
-('Helmet', 'Helmets', 'High-performance protective gear for professional cyclists', 'helmets'),
-('Glasses', 'Eyewear', 'Aerodynamic and protective cycling sunglasses', 'glasses'),
-('Gloves', 'Gloves', 'Comfort and grip for ultimate control', 'gloves'),
-('Jersey', 'Sportswear', 'Breathable professional cycling apparel', 'jerseys'),
-('Shoes', 'Cycling Shoes', 'Lightweight and efficient performance footwear', 'shoes'),
-('Bottle', 'Accessories', 'Water bottles, bags, and essential cycling gear', 'accessories');
+('/icons/helmet-icon.svg', 'Helmets', 'High-performance protective gear for professional cyclists', 'helmets'),
+('/icons/glasses-icon.svg', 'Eyewear', 'Aerodynamic and protective cycling sunglasses', 'glasses'),
+('/icons/gloves-icon.svg', 'Gloves', 'Comfort and grip for ultimate control', 'gloves'),
+('/icons/jersey-icon.svg', 'Sportswear', 'Breathable professional cycling apparel', 'jerseys'),
+('/icons/shoes-icon.svg', 'Cycling Shoes', 'Lightweight and efficient performance footwear', 'shoes'),
+('/icons/water-bottle-icon.svg', 'Accessories', 'Water bottles, bags, and essential cycling gear', 'accessories');
 
 INSERT INTO products (category_id, name, description, price, icon, stock_quantity) VALUES 
-(1, 'MET Trenta 3k', 'The MET Trenta 3K Carbon – Pogacar Special Edition offers elite-level aerodynamics and ventilation. Crafted for pro-level performance and protection.', 800, 'helmetPogacar', 50),
-(1, 'S-Works TT 5', 'The S-Works TT 5 is built for speed, inspired by Remco Evenepoel’s time trial dominance. A helmet that slices through air for maximum efficiency.', 550, 'helmetTT', 500),
-(1, 'Giro Aries Spherical', 'Giro Aries Spherical – Team Visma Special Edition. Lightweight, sleek, and engineered for top-tier safety and airflow.', 500, 'helmetVisma', 10);
+(1, 'MET Trenta 3k', 'The MET Trenta 3K Carbon – Pogacar Special Edition offers elite-level aerodynamics and ventilation. Crafted for pro-level performance and protection.', 800, '/products/helmet_pogacar.png', 50),
+(1, 'S-Works TT 5', 'The S-Works TT 5 is built for speed, inspired by Remco Evenepoel’s time trial dominance. A helmet that slices through air for maximum efficiency.', 550, '/products/helmet_evenepoel_TT.webp', 500),
+(1, 'Giro Aries Spherical', 'Giro Aries Spherical – Team Visma Special Edition. Lightweight, sleek, and engineered for top-tier safety and airflow.', 500, '/products/helmet_teamvisma.webp', 10);
+
+
+SELECT p.*, c.section FROM products p JOIN categories c ON p.category_id = c.category_id

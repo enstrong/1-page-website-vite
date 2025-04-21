@@ -1,36 +1,12 @@
 import '@/css/App.css'
 import '@/css/tabs/gear.css'
 import { useState, useEffect } from 'react'
-import Helmet from '/icons/helmet-icon.svg'
-import Glasses from '/icons/glasses-icon.svg'
-import Gloves from '/icons/gloves-icon.svg'
-import Jersey from '/icons/jersey-icon.svg'
-import Shoes from '/icons/shoes-icon.svg'
-import Bottle from '/icons/water-bottle-icon.svg'
-import helmetPogacar from '/products/helmet_pogacar.png'
-import helmetTT from '/products/helmet_evenepoel_TT.webp'
-import helmetVisma from '/products/helmet_teamvisma.webp'
 
 export default function Gear() {
   const [gearCategories, setGearCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  
-  const categoryIconMap = {
-    'Helmet': Helmet,
-    'Glasses': Glasses,
-    'Gloves': Gloves,
-    'Jersey': Jersey,
-    'Shoes': Shoes,
-    'Bottle': Bottle
-  };
-  
-  const productIconMap = {
-    'helmetPogacar': helmetPogacar,
-    'helmetTT': helmetTT,
-    'helmetVisma': helmetVisma
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,11 +17,8 @@ export default function Gear() {
           throw new Error(`HTTP error! Categories Status: ${categoriesResponse.status}`);
         }
         const categoriesData = await categoriesResponse.json();
-        const mappedCategories = categoriesData.map(category => ({
-          ...category,
-          icon: categoryIconMap[category.icon] || Bottle 
-        }));
-        setGearCategories(mappedCategories);
+        
+        setGearCategories(categoriesData);
         
         // fetching products
         const productsResponse = await fetch('http://localhost:5000/api/products');
@@ -54,13 +27,7 @@ export default function Gear() {
         }
         const productsData = await productsResponse.json();
         
-        // the icons
-        const mappedProducts = productsData.map(product => ({
-          ...product,
-          iconSrc: productIconMap[product.icon] || null
-        }));
-        
-        setProducts(mappedProducts);
+        setProducts(productsData);
         setIsLoading(false);
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -72,8 +39,8 @@ export default function Gear() {
     fetchData();
   }, []);
 
-  const getProductsBySection = (section) => {
-    return products.filter(product => product.section === section);
+  const getProductsByCategory = (categoryId) => {
+    return products.filter(product => product.category_id === categoryId);
   };
 
   function scrollToElement(elementId) {
@@ -93,7 +60,15 @@ export default function Gear() {
           <div className="gear-categories">
             {gearCategories.map((category) => (
               <div key={category.category_id} className="gear-category" onClick={() => scrollToElement(category.section)}>
-                <img src={category.icon} alt={category.name} className="gear-category-icon" />
+                <img 
+                  src={category.icon} 
+                  alt={category.name} 
+                  className="gear-category-icon"
+                  onError={(e) => {
+                    console.error(`Failed to load icon for ${category.name}`);
+                    e.target.src = '/icons/helmet-icon.svg'; // shows helmet icon if fails
+                  }} 
+                />
                 <h3 className="gear-category-title">{category.name}</h3>
                 <p className="gear-category-description">{category.description}</p>
               </div>
@@ -103,38 +78,28 @@ export default function Gear() {
       </div>
       
       {gearCategories.map((category) => {
-        const sectionProducts = getProductsBySection(category.section);
+        const categoryProducts = getProductsByCategory(category.category_id);
         
         return (
           <div key={`section-${category.category_id}`} id={category.section} className="gear-products-bg section d-flex align-center">
             <div className="container d-flex align-center justify-center f-column">
               <h1>{category.name}</h1>
               <div className="products-container">
-                {sectionProducts.length > 0 ? (
+                {categoryProducts.length > 0 ? (
                   <div className="gear-categories gear-products">
-                    {sectionProducts.map(product => (
+                    {categoryProducts.map(product => (
                       <div key={product.product_id} className="gear-category gear_product">
-                        {product.iconSrc ? (
-                          <div className="product-image">
-                            <img 
-                              src={product.iconSrc} 
-                              alt={product.name} 
-                              className="gear-product-icon"
-                              onError={(e) => {
-                                console.error(`Failed to load image for ${product.name}`, e);
-                                e.target.src = categoryIconMap[category.icon];
-                              }}
-                            />
-                          </div>
-                        ) : (
-                          <div className="product-image">
-                            <img 
-                              src={categoryIconMap[category.icon]} 
-                              alt={product.name}
-                              className="gear-category-icon" 
-                            />
-                          </div>
-                        )}
+                        <div className="product-image">
+                          <img 
+                            src={product.icon} 
+                            alt={product.name} 
+                            className="gear-product-icon"
+                            onError={(e) => {
+                              console.error(`Failed to load image for ${product.name}`);
+                              e.target.src = '/icons/helmet-icon.svg'; // shows helmet icon if fails
+                            }}
+                          />
+                        </div>
                         <h3 className="gear-category-title">{product.name}</h3>
                         <p className="gear-category-description">{product.description}</p>
                         <p className="gear-category-title">${product.price}</p>
