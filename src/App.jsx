@@ -1,27 +1,29 @@
-import { useState } from "react";
-import './css/App.css'
-import Header from '@/components/header.jsx'
-import Footer from '@/components/footer.jsx'
-import Bikes from '@/components/tabs/bikes.jsx'
-import Teams from '@/components/tabs/teams.jsx'
-import Gear from '@/components/tabs/gear.jsx'
-import Support from '@/components/tabs/support.jsx'
-import ScrollToTop from '@/components/scrollTop.jsx' 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './css/App.css';
+import Header from '@/components/header.jsx';
+import Footer from '@/components/footer.jsx';
+import Bikes from '@/components/tabs/bikes.jsx';
+import Teams from '@/components/tabs/teams.jsx';
+import Gear from '@/components/tabs/gear.jsx';
+import Support from '@/components/tabs/support.jsx';
+import ScrollToTop from '@/components/scrollTop.jsx';
 
 export default function App() {
-    const [activeTab, setActiveTab] = useState("bikes");
- 
   return (
-    <div className="wrapper">
-      <Header activeTab={activeTab} setActiveTab={setActiveTab}/>
+    <Router>
+      <div className="wrapper">
+        <Header />
+        
+        <Routes>
+          <Route path="/" element={<Bikes />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/gear" element={<Gear />} />
+          <Route path="/support" element={<Support />} />
+        </Routes>
 
-      {activeTab === "bikes" && <Bikes/>}
-      {activeTab === "teams" && <Teams/>}
-      {activeTab === "gear" && <Gear/>}
-      {activeTab === "support" && <Support/>}
-     
-      <Footer/>
-      <ScrollToTop />
-    </div>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </Router>
   );
 }
