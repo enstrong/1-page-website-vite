@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './css/App.css';
 import Header from '@/components/header.jsx';
@@ -6,10 +7,17 @@ import Bikes from '@/components/tabs/bikes.jsx';
 import Teams from '@/components/tabs/teams.jsx';
 import Gear from '@/components/tabs/gear.jsx';
 import Support from '@/components/tabs/support.jsx';
+import Cart from '@/components/tabs/cart.jsx';
 import Admin from '@/components/tabs/admin.jsx';
 import ScrollToTop from '@/components/scrollTop.jsx';
 
 export default function App() {
+  useEffect(() => {
+    if (!localStorage.getItem('session_id')) {
+      localStorage.setItem('session_id', crypto.randomUUID());
+    }
+  }, []);
+  
   return (
     <Router>
       <div className="wrapper">
@@ -21,6 +29,7 @@ export default function App() {
           <Route path="/gear" element={<Gear />} />
           <Route path="/support" element={<Support />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
 
         <Footer />

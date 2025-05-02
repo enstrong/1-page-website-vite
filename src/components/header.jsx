@@ -27,10 +27,14 @@ export default function Header() {
         <nav className={`main-header-nav uppercase ${isOpen ? "open" : ""}`}>
           <Link to="/" className={pathname === "/" ? "active" : ""} onClick={handleClick}>Bikes</Link>
           <Link to="/teams" className={pathname === "/teams" ? "active" : ""} onClick={handleClick}>Teams</Link>
-          <Link to="/" onClick={handleClick}><img src={TdFlogo} alt="TdF logo" className="header__logo header__logo-tdf" /></Link>
+          <Link to="/" onClick={handleClick}>
+            <img src={TdFlogo} alt="TdF logo" className="header__logo header__logo-tdf" />
+          </Link>
           <Link to="/gear" className={pathname === "/gear" ? "active" : ""} onClick={handleClick}>Gear</Link>
           <Link to="/support" className={pathname === "/support" ? "active" : ""} onClick={handleClick}>Support</Link>
-          <a href="#"><img src={ShoppingCart} alt="Cart" className="header__logo header__logo-cart" /></a>
+          <Link to="/cart" onClick={handleClick}>
+            <img src={ShoppingCart} alt="Cart" className="header__logo header__logo-cart" />
+          </Link>
         </nav>
       </div>
     </div>
