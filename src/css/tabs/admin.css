@@ -1,0 +1,154 @@
+.admin-section {
+  padding: 40px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.admin-controls {
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.admin__button {
+  padding: 10px 20px;
+  min-width: 150px;
+  margin-right: 10px;
+}
+
+/* Form styles */
+.admin-form-container {
+  background: #111;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.admin-form-container h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.form-group label {
+  color: #ccc;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.admin-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.admin-button.primary {
+  background-color: #0056b3;
+  color: white;
+}
+
+.admin-button.primary:hover {
+  background-color: #004494;
+}
+
+.admin-button.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.admin-button.secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Product list styles */
+.admin-products {
+  margin-top: 30px;
+}
+
+.admin-products h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.product-list th,
+.product-list td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #222;
+}
+
+.product-list th {
+  background-color: #1a1a1a;
+  font-weight: 600;
+  color: #fff;
+}
+
+.product-list tr:last-child td {
+  border-bottom: none;
+}
+
+.product-list tr:hover {
+  background-color: #222;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s;
+}
+
+.admin-action-btn.edit {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.admin-action-btn.edit:hover {
+  background-color: #e0a800;
+}
+
+.admin-action-btn.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.admin-action-btn.delete:hover {
+  background-color: #c82333;
+}

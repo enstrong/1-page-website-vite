@@ -6,6 +6,7 @@ import Bikes from '@/components/tabs/bikes.jsx';
 import Teams from '@/components/tabs/teams.jsx';
 import Gear from '@/components/tabs/gear.jsx';
 import Support from '@/components/tabs/support.jsx';
+import Admin from '@/components/tabs/admin.jsx';
 import ScrollToTop from '@/components/scrollTop.jsx';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/teams" element={<Teams />} />
           <Route path="/gear" element={<Gear />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
 
         <Footer />
