@@ -53,7 +53,8 @@ INSERT INTO categories (icon, name, description, section) VALUES
 ('/icons/gloves-icon.svg', 'Gloves', 'Comfort and grip for ultimate control', 'gloves'),
 ('/icons/jersey-icon.svg', 'Sportswear', 'Breathable professional cycling apparel', 'jerseys'),
 ('/icons/shoes-icon.svg', 'Cycling Shoes', 'Lightweight and efficient performance footwear', 'shoes'),
-('/icons/water-bottle-icon.svg', 'Accessories', 'Water bottles, bags, and essential cycling gear', 'accessories');
+('/icons/water-bottle-icon.svg', 'Accessories', 'Water bottles, bags, and essential cycling gear', 'accessories'),
+('icons/water-bottle-icon.svg', 'Bikes', 'Bikes of the winners of the most elite race in the world - Tour de France');
 
 INSERT INTO products (category_id, name, description, price, icon, stock_quantity) VALUES 
 -- Helmets
@@ -84,4 +85,10 @@ INSERT INTO products (category_id, name, description, price, icon, stock_quantit
 -- Water Bottles & Cages
 (6, 'Elite Fly Tour de France Bottle 2024', 'Ultra-light, pro-peloton used bottle with ergonomic grip and limited Tour branding.', 14.99, '/products/bottle_TDF.png', 300),
 (6, 'CamelBak Podium Chill – Jumbo-Visma Edition', 'Double-walled insulation, team graphics, and high flow cap used by top riders.', 19.00, '/products/bottle_camelbak.webp', 250),
-(6, 'Tacx Ciro Bottle Cage – Team DSM-Firmenich', 'Lightweight and strong with elite team graphics and excellent grip.', 24.99, '/products/bottle_cage_tacx.jpg', 200);
+(6, 'Tacx Ciro Bottle Cage – Team DSM-Firmenich', 'Lightweight and strong with elite team graphics and excellent grip.', 24.99, '/products/bottle_cage_tacx.jpg', 200),
+
+-- Bikes
+(7, 'Colnago V4Rs', 'Colnago V4Rs – The winning bike of UAE Team Emirates. Lightweight, stiff, and born to race on the world’s biggest stages.', 9000, '/products/bike_colnago.jpg', 20),
+(7, 'Cervélo R5', 'Cervélo R5 – Climbers’ dream, built for explosive ascents. The choice of Jumbo-Visma in Grand Tours.', 12000, '/products/bike_cervelo.png', 15),
+(7, 'Pinarello DOGMA F DURA ACE Di2', 'Pinarello DOGMA F – The bike of champions. Italian elegance fused with aerodynamic speed and pro-level shifting.', 9000, '/products/bike_pinarello.png', 20),
+(7, 'S-Works Tarmac SL8', 'S-Works Tarmac SL8 – Specialized’s fastest race bike yet. Ridden by world champions for unmatched performance.', 9000, '/products/bike_sworks.webp', 20);

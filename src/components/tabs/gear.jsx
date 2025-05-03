@@ -7,6 +7,8 @@ export default function Gear() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [addingToCart, setAddingToCart] = useState(false);
+  const [notification, setNotification] = useState({ show: false, message: '', type: '' });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,11 +52,76 @@ export default function Gear() {
     }
   }
 
+  // adding product to cart
+  const handleAddToCart = async (product) => {
+    try {
+      setAddingToCart(true);
+      
+      let sessionId = localStorage.getItem('session_id');
+      if (!sessionId) {
+        sessionId = crypto.randomUUID();
+        localStorage.setItem('session_id', sessionId);
+      }
+      
+      const response = await fetch('http://localhost:5000/api/cart/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          session_id: sessionId,
+          product_id: product.product_id,
+          quantity: 1
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to add item to cart');
+      }
+      
+      const result = await response.json();
+      
+      // show success notification
+      setNotification({
+        show: true,
+        message: `${product.name} added to cart!`,
+        type: 'success'
+      });
+      
+      // hide notification after 3 seconds
+      setTimeout(() => {
+        setNotification({ show: false, message: '', type: '' });
+      }, 3000);
+      
+    } catch (err) {
+      console.error('Error adding to cart:', err);
+      // show error notification
+      setNotification({
+        show: true,
+        message: 'Failed to add item to cart',
+        type: 'error'
+      });
+      
+      // hide notification after 3 seconds
+      setTimeout(() => {
+        setNotification({ show: false, message: '', type: '' });
+      }, 3000);
+    } finally {
+      setAddingToCart(false);
+    }
+  };
+
   if (isLoading) return <div className="loading">Loading data...</div>;
   if (error) return <div className="error">Error: {error}</div>;
 
   return (
     <>
+      {notification.show && (
+        <div className={`notification ${notification.type}`}>
+          {notification.message}
+        </div>
+      )}
+      
       <div className="gear section d-flex align-center">
         <div className="container d-flex align-center justify-center f-column">
           <div className="gear-categories">
@@ -102,8 +169,17 @@ export default function Gear() {
                         </div>
                         <h3 className="gear-category-title">{product.name}</h3>
                         <p className="gear-category-description">{product.description}</p>
-                        <p className="gear-category-title">${product.price}</p>
-                        <button className="bikes-section__button d-flex">Add to Cart</button>
+                        <p className="gear-category-title">${parseFloat(product.price).toFixed(2)}</p>
+                        <button 
+                          className="bikes-section__button d-flex" 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleAddToCart(product);
+                          }}
+                          disabled={addingToCart}
+                        >
+                          {addingToCart ? 'Adding...' : 'Add to Cart'}
+                        </button>
                       </div>
                     ))}
                   </div>

@@ -243,7 +243,7 @@ export default function Admin() {
 
   return (
     <>
-      <div className="section admin-section">
+      <div className="section admin-section d-flex align-center"> 
         <div className="container">
           <section className="admin-controls d-flex">
             <button 
