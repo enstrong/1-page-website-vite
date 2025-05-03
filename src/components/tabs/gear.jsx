@@ -146,14 +146,19 @@ export default function Gear() {
       
       {gearCategories.map((category) => {
         const categoryProducts = getProductsByCategory(category.category_id);
+        const isBikeCategory = category.section === 'bikes';
         
         return (
-          <div key={`section-${category.category_id}`} id={category.section} className="gear-products-bg section d-flex align-center">
+          <div 
+            key={`section-${category.category_id}`} 
+            id={category.section} 
+            className="gear-products-bg section d-flex align-center"
+          >
             <div className="container d-flex align-center justify-center f-column">
               <h1>{category.name}</h1>
               <div className="products-container">
                 {categoryProducts.length > 0 ? (
-                  <div className="gear-categories gear-products">
+                  <div id={isBikeCategory ? 'bikes' : ''} className="gear-categories gear-products">
                     {categoryProducts.map(product => (
                       <div key={product.product_id} className="gear-category gear_product">
                         <div className="product-image">

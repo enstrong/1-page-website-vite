@@ -54,7 +54,7 @@ INSERT INTO categories (icon, name, description, section) VALUES
 ('/icons/jersey-icon.svg', 'Sportswear', 'Breathable professional cycling apparel', 'jerseys'),
 ('/icons/shoes-icon.svg', 'Cycling Shoes', 'Lightweight and efficient performance footwear', 'shoes'),
 ('/icons/water-bottle-icon.svg', 'Accessories', 'Water bottles, bags, and essential cycling gear', 'accessories'),
-('icons/water-bottle-icon.svg', 'Bikes', 'Bikes of the winners of the most elite race in the world - Tour de France');
+('icons/bike-icon.svg', 'Bikes', 'Bikes of the winners of the most elite race in the world - Tour de France', 'bikes');
 
 INSERT INTO products (category_id, name, description, price, icon, stock_quantity) VALUES 
 -- Helmets
