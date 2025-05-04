@@ -8,6 +8,7 @@ import Teams from '@/components/tabs/teams.jsx';
 import Gear from '@/components/tabs/gear.jsx';
 import Support from '@/components/tabs/support.jsx';
 import Cart from '@/components/tabs/cart.jsx';
+import Checkout from '@/components/tabs/checkout.jsx';
 import Admin from '@/components/tabs/admin.jsx';
 import ScrollToTop from '@/components/scrollTop.jsx';
 
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/support" element={<Support />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/checkout" element={<Checkout />} />
         </Routes>
 
         <Footer />

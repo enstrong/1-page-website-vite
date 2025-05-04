@@ -242,6 +242,122 @@ app.delete('/api/cart/item/:id', async (req, res) => {
   }
 });
 
+// create a new order
+app.post('/api/orders', async (req, res) => {
+  const { session_id, customer_name, customer_email, shipping_address, total_price } = req.body;
+  
+  if (!session_id || !customer_name || !customer_email || !shipping_address) {
+    return res.status(400).json({ message: 'Missing required fields' });
+  }
+  
+  try {
+    // start a transaction
+    const client = await pool.connect();
+    
+    try {
+      await client.query('BEGIN');
+      
+      // create the order record
+      const orderResult = await client.query(
+        `INSERT INTO orders (session_id, customer_name, customer_email, shipping_address, total_price, order_status, time_of_creation) 
+         VALUES ($1, $2, $3, $4, $5, $6, NOW()) 
+         RETURNING order_id`,
+        [session_id, customer_name, customer_email, shipping_address, total_price, 'pending']
+      );
+      
+      const orderId = orderResult.rows[0].order_id;
+      
+      // get cart items for this session
+      const cartQuery = await client.query(
+        `SELECT c.cart_id 
+         FROM cart c 
+         WHERE c.session_id = $1`, 
+        [session_id]
+      );
+      
+      if (cartQuery.rows.length === 0) {
+        throw new Error('Cart not found');
+      }
+      
+      const cartId = cartQuery.rows[0].cart_id;
+      
+      // get cart items with product information
+      const cartItemsQuery = await client.query(
+        `SELECT ci.product_id, ci.quantity, p.price 
+         FROM cart_items ci
+         JOIN products p ON ci.product_id = p.product_id
+         WHERE ci.cart_id = $1`,
+        [cartId]
+      );
+      
+      // create order items from cart items
+      for (const item of cartItemsQuery.rows) {
+        await client.query(
+          `INSERT INTO order_items (order_id, product_id, quantity, price) 
+           VALUES ($1, $2, $3, $4)`,
+          [orderId, item.product_id, item.quantity, item.price]
+        );
+        
+        // update product stock
+        await client.query(
+          `UPDATE products 
+           SET stock_quantity = stock_quantity - $1 
+           WHERE product_id = $2`,
+          [item.quantity, item.product_id]
+        );
+      }
+      
+      // commit the transaction
+      await client.query('COMMIT');
+      
+      res.status(201).json({ 
+        message: 'Order created successfully', 
+        order_id: orderId 
+      });
+    } catch (err) {
+      // rollback in case of error
+      await client.query('ROLLBACK');
+      throw err;
+    } finally {
+      client.release();
+    }
+  } catch (error) {
+    console.error('Error creating order:', error);
+    res.status(500).json({ message: 'Server error while creating order', error: error.message });
+  }
+});
+
+// clear cart after checkout
+app.post('/api/cart/clear', async (req, res) => {
+  const { session_id } = req.query;
+  
+  if (!session_id) {
+    return res.status(400).json({ message: 'Session ID is required' });
+  }
+  
+  try {
+    // find the cart
+    const cartResult = await pool.query(
+      'SELECT cart_id FROM cart WHERE session_id = $1',
+      [session_id]
+    );
+    
+    if (cartResult.rows.length === 0) {
+      return res.status(404).json({ message: 'Cart not found' });
+    }
+    
+    const cartId = cartResult.rows[0].cart_id;
+    
+    // delete all items from the cart
+    await pool.query('DELETE FROM cart_items WHERE cart_id = $1', [cartId]);
+    
+    res.status(200).json({ message: 'Cart cleared successfully' });
+  } catch (error) {
+    console.error('Error clearing cart:', error);
+    res.status(500).json({ message: 'Server error while clearing cart' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

@@ -10,7 +10,6 @@ export default function Bikes() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch bike products (category_id 7) on component mount
     const fetchBikes = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/products');
@@ -18,7 +17,6 @@ export default function Bikes() {
           throw new Error('Failed to fetch products');
         }
         const data = await response.json();
-        // Filter only bikes (category_id 7)
         const bikeProducts = data.filter(product => product.category_id === 7);
         setProducts(bikeProducts);
       } catch (error) {
@@ -33,7 +31,6 @@ export default function Bikes() {
     try {
       setLoading(true);
       
-      // Find the product by name
       const bikeProduct = products.find(product => 
         product.name.includes(bikeName) || 
         (bikeName === 'Colnago V4Rs' && product.name.includes('Colnago')) ||
@@ -52,14 +49,12 @@ export default function Bikes() {
         return;
       }
       
-      // Get or create session ID
       let sessionId = localStorage.getItem('session_id');
       if (!sessionId) {
         sessionId = crypto.randomUUID();
         localStorage.setItem('session_id', sessionId);
       }
       
-      // Add to cart
       const response = await fetch('http://localhost:5000/api/cart/add', {
         method: 'POST',
         headers: {
@@ -76,14 +71,12 @@ export default function Bikes() {
         throw new Error('Failed to add bike to cart');
       }
       
-      // Show success notification briefly
       setNotification({
         show: true,
         message: `${bikeProduct.name} added to cart!`,
         type: 'success'
       });
       
-      // Redirect to cart page
       setTimeout(() => {
         navigate('/cart');
       }, 1000);

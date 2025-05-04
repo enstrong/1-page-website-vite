@@ -9,6 +9,7 @@
     rgba(0, 0, 0, 0.5)
   ), url(/bg/colnago.webp) no-repeat;
   background-size: cover;
+  background-position: center 0%;
 }
 
 .cervelo-bg {
