@@ -57,7 +57,7 @@ export default function Support() {
               >
                 FAQ {showFAQ ? '▲' : '▼'}
               </button>
-              <button className="bikes-section__button d-flex">Contact us &#8594;</button>
+              <a href="tel:87776664433"><button className="bikes-section__button d-flex">Contact us &#8594;</button></a>
             </div>
             
             {showFAQ && (
